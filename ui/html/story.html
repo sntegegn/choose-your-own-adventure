@@ -1,0 +1,25 @@
+{{define "story"}}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    {{with .Title}}
+    <title>{{.}}</title>
+    {{end}}
+  </head>
+  <html>
+    <body>
+      {{range .Story}}
+      <p>{{.}}</p>
+      {{end}}
+      <form action="/adventure" method="post">
+        {{range .Options}}
+        <input type="radio" value="{{.Arc}}" name="option"/> {{.Text}}
+        <br/>
+        {{end}}
+       <input type="submit" value="Enter">
+      </form>
+    </body>
+  </html>
+</html>
+{{end}}
